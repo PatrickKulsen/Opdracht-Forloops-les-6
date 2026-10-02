@@ -10,6 +10,10 @@
 // Tip: je kunt de .repeat() methode gebruiken om een karakter een n aantal keer te herhalen... Dit heb je nog niet geleerd, maar bekijk hiervoor dit MDN-artikel eens: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 // ==========================================
 
+for (let i = 0; i < 5; i++) {
+    const stars= "*";
+    console.log(stars.repeat(i+1));
+}
 
 // ==========================================
 // Opdracht 2. Maak een for-loop die 4 keer het woord "loop..." logt, en bij de laatste (vijfde) loop het woord "klaar!"
@@ -20,7 +24,13 @@
 // loop...
 // klaar!
 // ==========================================
-
+for (let i = 0; i < 5; i++) {
+    if (i<4) {
+        console.log("loop");
+    } else {
+        console.log("klaar");
+    }
+}
 
 // ==========================================
 // Opdracht 3. Maak een for-loop die automatisch factuurnummers genereert in het formaat INV-0001, INV-0002, enzovoorts. Zorg ervoor dat je begint bij nummer 1 en dat de nummers oplopen. Er zijn in totaal 8 factuurnummers nodig.
@@ -36,6 +46,11 @@
 // 'INV-0008'
 
 // ==========================================
+
+for (let i = 0; i < 8; i++) {
+    const nr=i+1;
+    console.log("INV-000"+nr);
+}
 
 // ==========================================
 // Opdracht 4. Schrijf een for-loop die van 9 tot en met 18 loopt en de uren logt.
@@ -56,6 +71,16 @@
 // 18:00
 // ==========================================
 
+for (let i = 0; i < 10; i++) {
+    const hour = 9+i;
+    if (hour !==12 && hour !==17) {
+        console.log(hour+":00");
+    } else if (hour==12) {
+        console.log(hour+":00 Lunchpauze");
+    } else if (hour==17) {
+        console.log(hour+":00 Bijna klaar...");
+    }
+}
 
 // ==========================================
 // Opdracht 5. Maak een for-loop die van 0 tot 9 loopt en de getallen 0 tot 9 logt.
@@ -73,6 +98,16 @@
 // >> 9
 // ==========================================
 
+for (let i = 0; i < 9; i++) {
+    const nr=i+1;
+    if (nr<3) {
+        console.log(nr);
+    } else if (nr>2 && nr<6) {
+        console.log(">"+nr);
+    } else if (nr>=6) {
+        console.log(">>"+nr);
+    }
+}
 
 // ==========================================
 // Opdracht 6 (BONUS). Schrijf een for-loop die van 0 tot 100 loopt en de getallen print.
@@ -112,5 +147,16 @@
 // etc.
 // ==========================================
 
-
+for (let i = 0; i < 100; i++) {
+    if (Number.isInteger((i+1)/3) && Number.isInteger((i+1)/5)) {
+        console.log("FizzBuzz");
+    } else if (Number.isInteger((i+1)/5)) {
+        console.log("Buzz");
+    } else if (Number.isInteger((i+1)/3)) {
+        console.log("Fizz");
+    }
+    else {
+        console.log(i+1);
+    }
+    }
 
